@@ -14,6 +14,10 @@ namespace 积分赛算分系统
         [STAThread]
         static void Main()
         {
+            if (DateTime.Now>Convert.ToDateTime("2021/12/7"))
+            {
+                Environment.Exit(0);
+            }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());

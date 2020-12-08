@@ -49,6 +49,7 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btn_cundang = new Sunny.UI.UIButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_score)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_result)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -63,7 +64,7 @@
             // 
             this.uiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uiButton1.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.uiButton1.Location = new System.Drawing.Point(319, 3);
+            this.uiButton1.Location = new System.Drawing.Point(269, 3);
             this.uiButton1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiButton1.Name = "uiButton1";
             this.uiButton1.Size = new System.Drawing.Size(94, 34);
@@ -189,7 +190,7 @@
             // 
             this.uiButton2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uiButton2.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.uiButton2.Location = new System.Drawing.Point(519, 3);
+            this.uiButton2.Location = new System.Drawing.Point(569, 3);
             this.uiButton2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiButton2.Name = "uiButton2";
             this.uiButton2.Size = new System.Drawing.Size(94, 34);
@@ -201,7 +202,7 @@
             // 
             this.btn_clear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_clear.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btn_clear.Location = new System.Drawing.Point(419, 3);
+            this.btn_clear.Location = new System.Drawing.Point(369, 3);
             this.btn_clear.MinimumSize = new System.Drawing.Size(1, 1);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(94, 34);
@@ -244,15 +245,17 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 5;
+            this.tableLayoutPanel2.ColumnCount = 6;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.uiButton1, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.uiButton2, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.uiButton2, 4, 0);
             this.tableLayoutPanel2.Controls.Add(this.btn_clear, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btn_cundang, 3, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
@@ -261,6 +264,18 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(933, 40);
             this.tableLayoutPanel2.TabIndex = 7;
+            // 
+            // btn_cundang
+            // 
+            this.btn_cundang.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_cundang.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btn_cundang.Location = new System.Drawing.Point(469, 3);
+            this.btn_cundang.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btn_cundang.Name = "btn_cundang";
+            this.btn_cundang.Size = new System.Drawing.Size(94, 34);
+            this.btn_cundang.TabIndex = 6;
+            this.btn_cundang.Text = "保存结果";
+            this.btn_cundang.Click += new System.EventHandler(this.btn_cundang_Click);
             // 
             // Form1
             // 
@@ -302,6 +317,7 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private Sunny.UI.UIButton btn_cundang;
     }
 }
 
