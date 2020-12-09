@@ -15,6 +15,7 @@ namespace 积分赛算分系统
     {
         List<PersonInfo> list_p = new List<PersonInfo>();
         List<RuleInfo> list_ruleinfo = new List<RuleInfo>();
+        List<string> list_name = new List<string>();
         public Form1()
         {
             InitializeComponent();
@@ -36,11 +37,10 @@ namespace 积分赛算分系统
                 };
                 list_ruleinfo.Add(myinfo);
             }
-            //获得人员,同时加载dgv_score的下拉列表项
-            DataGridViewComboBoxColumn cola = dgv_score.Columns[0] as DataGridViewComboBoxColumn;
-            DataGridViewComboBoxColumn colb = dgv_score.Columns[1] as DataGridViewComboBoxColumn;
-
-
+            //获得人员,同时提取出人名数组
+           list_name = new List<string>();
+            //DataGridViewComboBoxColumn cola = dgv_score.Columns[0] as DataGridViewComboBoxColumn;
+            //DataGridViewComboBoxColumn colb = dgv_score.Columns[1] as DataGridViewComboBoxColumn;
             mywbk = new Workbook(@".\personinfo.xlsx");
             mysht = mywbk.Worksheets[0];
             list_p = new List<PersonInfo>();
@@ -58,10 +58,13 @@ namespace 积分赛算分系统
                     _dangqianjifen = mysht.Cells[i, 6].IntValue
                 };
                 list_p.Add(pi);
-                cola.Items.Add(pi._xingming);
-                colb.Items.Add(pi._xingming);
+                list_name.Add(pi._xingming);
+                //cola.Items.Add(pi._xingming);
+                //colb.Items.Add(pi._xingming);
             }
-
+            //向p_score种加载一个分数控件
+            UCScore myuc = new UCScore(list_name) { Dock=DockStyle.Top};
+            p_score.Controls.Add(myuc);
 
         }
 
@@ -69,36 +72,36 @@ namespace 积分赛算分系统
         {
             dgv_result.Rows.Clear();
             //循环判断dgvscore中A,B 分别是 高分还是低分
-            for (int i = 0; i < dgv_score.Rows.Count-1; i++)
+            for (int i = 0; i < p_score.Controls.Count - 1; i++)
             {
-                var myrow = dgv_score.Rows[i];
+                UCScore myrow = p_score.Controls[i] as UCScore;
                 //获得A的personinfo
-                PersonInfo pa = list_p.Find((PersonInfo pi)=>pi._xingming==myrow.Cells[0].Value.ToString());
-                PersonInfo pb = list_p.Find((PersonInfo pi) => pi._xingming == myrow.Cells[1].Value.ToString());
+                PersonInfo pa = list_p.Find((PersonInfo pi) => pi._xingming == myrow.cbb_a.Text);
+                PersonInfo pb = list_p.Find((PersonInfo pi) => pi._xingming == myrow.cbb_b.Text);
                 //计算二者分差，获得加减分，加到每个人的当前积分中
                 int fencha = Math.Abs(pa._dangqianjifen - pb._dangqianjifen);
                 RuleInfo ri = null;
                 for (int j = 0; j < list_ruleinfo.Count; j++)
                 {
-                    if (fencha==0)
+                    if (fencha == 0)
                     {
                         ri = list_ruleinfo[0];
                         break;
                     }
-                    if (list_ruleinfo[j]._fencha>=fencha && list_ruleinfo[j-1]._fencha<fencha)
+                    if (list_ruleinfo[j]._fencha >= fencha && list_ruleinfo[j - 1]._fencha < fencha)
                     {
                         ri = list_ruleinfo[j];
                         break;
                     }
                 }
                 //判断pa和pb的输赢
-                int scorea = Convert.ToInt32(myrow.Cells[2].Value.ToString().Substring(0,1));
-                int scoreb = Convert.ToInt32(myrow.Cells[2].Value.ToString().Substring(1, 1));
+                int scorea = Convert.ToInt32(myrow.cbb_score.Text.Substring(0, 1));
+                int scoreb = Convert.ToInt32(myrow.cbb_score.Text.Substring(2, 1));
 
                 //如果A 输了，如果A是高分，如果A是低分
-                if (scorea<scoreb)
+                if (scorea < scoreb)
                 {
-                    if (pa._dangqianjifen>=pb._dangqianjifen)
+                    if (pa._dangqianjifen >= pb._dangqianjifen)
                     {
                         pa._dangqianjifen -= ri._gaobai;
                         pb._dangqianjifen += ri._gaobai;
@@ -174,7 +177,11 @@ namespace 积分赛算分系统
 
         private void btn_clear_Click(object sender, EventArgs e)
         {
-            dgv_score.Rows.Clear();
+            p_score.Controls.Clear();
+            //向p_score种加载一个分数控件
+            UCScore myuc = new UCScore(list_name) { Dock = DockStyle.Top };
+            p_score.Controls.Add(myuc);
+
         }
 
         private void btn_cundang_Click(object sender, EventArgs e)
@@ -204,6 +211,11 @@ namespace 积分赛算分系统
             mywbk.Save(@".\personinfo.xlsx");
 
             MessageBox.Show("保存成功！");
+        }
+
+        private void p_score_ControlRemoved(object sender, ControlEventArgs e)
+        {
+         
         }
     }
 }
