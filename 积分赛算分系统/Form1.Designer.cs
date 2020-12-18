@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.uiButton1 = new Sunny.UI.UIButton();
             this.dgv_result = new Sunny.UI.UIDataGridView();
             this.xuhao = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,28 +44,32 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_cundang = new Sunny.UI.UIButton();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.p_score = new System.Windows.Forms.Panel();
+            this.uiButton3 = new Sunny.UI.UIButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_result)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.p_score.SuspendLayout();
             this.SuspendLayout();
             // 
             // uiButton1
             // 
             this.uiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiButton1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiButton1.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.uiButton1.Location = new System.Drawing.Point(269, 3);
+            this.uiButton1.Location = new System.Drawing.Point(271, 5);
+            this.uiButton1.Margin = new System.Windows.Forms.Padding(5);
             this.uiButton1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiButton1.Name = "uiButton1";
-            this.uiButton1.Size = new System.Drawing.Size(94, 34);
+            this.uiButton1.Size = new System.Drawing.Size(90, 30);
             this.uiButton1.Style = Sunny.UI.UIStyle.Custom;
             this.uiButton1.TabIndex = 3;
             this.uiButton1.Text = "开始计算";
@@ -73,19 +78,19 @@
             // dgv_result
             // 
             this.dgv_result.AllowUserToAddRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.dgv_result.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.dgv_result.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_result.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_result.BackgroundColor = System.Drawing.Color.White;
             this.dgv_result.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("微软雅黑", 12F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_result.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("微软雅黑", 12F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_result.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_result.ColumnHeadersHeight = 31;
             this.dgv_result.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_result.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -93,6 +98,14 @@
             this.xingming,
             this.chushijifen,
             this.dagnqianjifen});
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("微软雅黑", 12F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_result.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_result.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_result.EnableHeadersVisualStyles = false;
             this.dgv_result.Font = new System.Drawing.Font("微软雅黑", 12F);
@@ -101,8 +114,8 @@
             this.dgv_result.Margin = new System.Windows.Forms.Padding(0);
             this.dgv_result.Name = "dgv_result";
             this.dgv_result.RowHeadersVisible = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            this.dgv_result.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            this.dgv_result.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_result.RowTemplate.Height = 29;
             this.dgv_result.SelectedIndex = -1;
             this.dgv_result.ShowGridLine = true;
@@ -133,11 +146,13 @@
             // uiButton2
             // 
             this.uiButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiButton2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiButton2.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.uiButton2.Location = new System.Drawing.Point(569, 3);
+            this.uiButton2.Location = new System.Drawing.Point(571, 5);
+            this.uiButton2.Margin = new System.Windows.Forms.Padding(5);
             this.uiButton2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiButton2.Name = "uiButton2";
-            this.uiButton2.Size = new System.Drawing.Size(94, 34);
+            this.uiButton2.Size = new System.Drawing.Size(90, 30);
             this.uiButton2.TabIndex = 5;
             this.uiButton2.Text = "导出结果表";
             this.uiButton2.Click += new System.EventHandler(this.btn_daochu_Click);
@@ -145,11 +160,13 @@
             // btn_clear
             // 
             this.btn_clear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_clear.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_clear.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btn_clear.Location = new System.Drawing.Point(369, 3);
+            this.btn_clear.Location = new System.Drawing.Point(371, 5);
+            this.btn_clear.Margin = new System.Windows.Forms.Padding(5);
             this.btn_clear.MinimumSize = new System.Drawing.Size(1, 1);
             this.btn_clear.Name = "btn_clear";
-            this.btn_clear.Size = new System.Drawing.Size(94, 34);
+            this.btn_clear.Size = new System.Drawing.Size(90, 30);
             this.btn_clear.Style = Sunny.UI.UIStyle.Custom;
             this.btn_clear.TabIndex = 3;
             this.btn_clear.Text = "清空成绩";
@@ -195,11 +212,13 @@
             // btn_cundang
             // 
             this.btn_cundang.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_cundang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_cundang.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btn_cundang.Location = new System.Drawing.Point(469, 3);
+            this.btn_cundang.Location = new System.Drawing.Point(471, 5);
+            this.btn_cundang.Margin = new System.Windows.Forms.Padding(5);
             this.btn_cundang.MinimumSize = new System.Drawing.Size(1, 1);
             this.btn_cundang.Name = "btn_cundang";
-            this.btn_cundang.Size = new System.Drawing.Size(94, 34);
+            this.btn_cundang.Size = new System.Drawing.Size(90, 30);
             this.btn_cundang.TabIndex = 6;
             this.btn_cundang.Text = "保存结果";
             this.btn_cundang.Click += new System.EventHandler(this.btn_cundang_Click);
@@ -220,6 +239,22 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(933, 597);
             this.tableLayoutPanel3.TabIndex = 8;
             // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel4, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.p_score, 0, 1);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(380, 597);
+            this.tableLayoutPanel5.TabIndex = 1;
+            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.BackColor = System.Drawing.Color.DarkGray;
@@ -227,7 +262,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel4.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.label2, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.label3, 2, 0);
@@ -283,31 +318,37 @@
             this.label3.Text = "比分";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 1;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel4, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.p_score, 0, 1);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 2;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(380, 597);
-            this.tableLayoutPanel5.TabIndex = 1;
-            // 
             // p_score
             // 
+            this.p_score.Controls.Add(this.uiButton3);
             this.p_score.Dock = System.Windows.Forms.DockStyle.Fill;
             this.p_score.Location = new System.Drawing.Point(0, 32);
             this.p_score.Margin = new System.Windows.Forms.Padding(0);
             this.p_score.Name = "p_score";
             this.p_score.Size = new System.Drawing.Size(380, 565);
             this.p_score.TabIndex = 1;
-            this.p_score.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.p_score_ControlRemoved);
+            // 
+            // uiButton3
+            // 
+            this.uiButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiButton3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.uiButton3.FillColor = System.Drawing.Color.SeaGreen;
+            this.uiButton3.FillHoverColor = System.Drawing.Color.MediumSeaGreen;
+            this.uiButton3.FillPressColor = System.Drawing.Color.MediumSeaGreen;
+            this.uiButton3.FillSelectedColor = System.Drawing.Color.MediumSeaGreen;
+            this.uiButton3.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.uiButton3.Location = new System.Drawing.Point(0, 0);
+            this.uiButton3.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiButton3.Name = "uiButton3";
+            this.uiButton3.RectColor = System.Drawing.Color.Transparent;
+            this.uiButton3.RectHoverColor = System.Drawing.Color.Transparent;
+            this.uiButton3.RectPressColor = System.Drawing.Color.Transparent;
+            this.uiButton3.RectSelectedColor = System.Drawing.Color.Transparent;
+            this.uiButton3.Size = new System.Drawing.Size(380, 32);
+            this.uiButton3.Style = Sunny.UI.UIStyle.Custom;
+            this.uiButton3.TabIndex = 0;
+            this.uiButton3.Text = "添加场次";
+            this.uiButton3.Click += new System.EventHandler(this.uiButton3_Click);
             // 
             // Form1
             // 
@@ -319,15 +360,16 @@
             this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
-            this.Text = "积分赛分数计算助手";
+            this.Text = "积分赛分数计算助手v1.0.3";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_result)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
-            this.tableLayoutPanel5.ResumeLayout(false);
+            this.p_score.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -351,6 +393,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel p_score;
+        private Sunny.UI.UIButton uiButton3;
     }
 }
 

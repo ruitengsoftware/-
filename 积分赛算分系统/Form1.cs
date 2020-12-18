@@ -62,17 +62,13 @@ namespace 积分赛算分系统
                 //cola.Items.Add(pi._xingming);
                 //colb.Items.Add(pi._xingming);
             }
-            //向p_score种加载一个分数控件
-            UCScore myuc = new UCScore(list_name) { Dock=DockStyle.Top};
-            p_score.Controls.Add(myuc);
-
         }
 
         private void btn_jisuan_Click(object sender, EventArgs e)
         {
             dgv_result.Rows.Clear();
             //循环判断dgvscore中A,B 分别是 高分还是低分
-            for (int i = 0; i < p_score.Controls.Count - 1; i++)
+            for (int i = p_score.Controls.Count-1; i>0; i--)
             {
                 UCScore myrow = p_score.Controls[i] as UCScore;
                 //获得A的personinfo
@@ -153,22 +149,29 @@ namespace 积分赛算分系统
                 //添加表头
                 mysht.Cells[0, 0].Value = "序号";
                 mysht.Cells[0, 1].Value = "姓名";
-                mysht.Cells[0, 2].Value = "性别";
-                mysht.Cells[0, 3].Value = "手机号码";
-                mysht.Cells[0, 4].Value = "身份证号码";
-                mysht.Cells[0, 5].Value = "初始积分";
-                mysht.Cells[0, 6].Value = "当前积分";
+                mysht.Cells[0, 2].Value = "初始积分";
+                mysht.Cells[0, 3].Value = "当前积分";
+                //mysht.Cells[0, 4].Value = "身份证号码";
+                //mysht.Cells[0, 5].Value = "初始积分";
+                //mysht.Cells[0, 6].Value = "当前积分";
 
                 //循环添加人员信息
-                for (int i = 0; i < list_p.Count; i++)
+                for (int i = 0; i < dgv_result.Rows.Count; i++)
                 {
-                    mysht.Cells[i + 1, 0].Value = list_p[i]._xuhao;
-                    mysht.Cells[i + 1, 1].Value = list_p[i]._xingming;
-                    mysht.Cells[i + 1, 2].Value = list_p[i]._xingbie;
-                    mysht.Cells[i + 1, 3].Value = list_p[i]._shoujihaoma;
-                    mysht.Cells[i + 1, 4].Value = list_p[i]._shenfenzheng;
-                    mysht.Cells[i + 1, 5].Value = list_p[i]._chushijifen;
-                    mysht.Cells[i + 1, 6].Value = list_p[i]._dangqianjifen;
+                    mysht.Cells[i + 1, 0].Value = dgv_result.Rows[i].Cells[0].Value.ToString();
+                    mysht.Cells[i + 1, 1].Value = dgv_result.Rows[i].Cells[1].Value.ToString();
+                    mysht.Cells[i + 1, 2].Value = dgv_result.Rows[i].Cells[2].Value.ToString();
+                    mysht.Cells[i + 1, 3].Value = dgv_result.Rows[i].Cells[3].Value.ToString();
+
+
+
+                    //mysht.Cells[i + 1, 0].Value = list_p[i]._xuhao;
+                    //mysht.Cells[i + 1, 1].Value = list_p[i]._xingming;
+                    //mysht.Cells[i + 1, 2].Value = list_p[i]._xingbie;
+                    //mysht.Cells[i + 1, 3].Value = list_p[i]._shoujihaoma;
+                    //mysht.Cells[i + 1, 4].Value = list_p[i]._shenfenzheng;
+                    //mysht.Cells[i + 1, 5].Value = list_p[i]._chushijifen;
+                    //mysht.Cells[i + 1, 6].Value = list_p[i]._dangqianjifen;
                 }
                 mywbk.Save(sfd.FileName);
                 MessageBox.Show("保存完成！");
@@ -177,10 +180,10 @@ namespace 积分赛算分系统
 
         private void btn_clear_Click(object sender, EventArgs e)
         {
-            p_score.Controls.Clear();
-            //向p_score种加载一个分数控件
-            UCScore myuc = new UCScore(list_name) { Dock = DockStyle.Top };
-            p_score.Controls.Add(myuc);
+            for (int i = p_score.Controls.Count-1; i > 0; i--)
+            {
+                p_score.Controls.RemoveAt(i);
+            }
 
         }
 
@@ -213,9 +216,16 @@ namespace 积分赛算分系统
             MessageBox.Show("保存成功！");
         }
 
-        private void p_score_ControlRemoved(object sender, ControlEventArgs e)
+        private void uiButton3_Click(object sender, EventArgs e)
         {
-         
+            UCScore myuc = new UCScore(list_name) { Dock=DockStyle.Top};
+           // UCScore myuc = new UCScore() { Dock = DockStyle.Top };
+
+            p_score.Controls.Add(myuc);
+
+            p_score.Controls.SetChildIndex(myuc, 1);
+
+
         }
     }
 }

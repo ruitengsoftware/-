@@ -50,11 +50,11 @@
             this.tableLayoutPanel1.Controls.Add(this.cbb_score, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 3, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(1, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(378, 31);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(380, 33);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // cbb_a
@@ -63,7 +63,7 @@
             this.cbb_a.FormattingEnabled = true;
             this.cbb_a.Location = new System.Drawing.Point(3, 3);
             this.cbb_a.Name = "cbb_a";
-            this.cbb_a.Size = new System.Drawing.Size(137, 25);
+            this.cbb_a.Size = new System.Drawing.Size(138, 25);
             this.cbb_a.TabIndex = 0;
             this.cbb_a.TextUpdate += new System.EventHandler(this.cbb_a_TextUpdate);
             // 
@@ -71,9 +71,9 @@
             // 
             this.cbb_b.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbb_b.FormattingEnabled = true;
-            this.cbb_b.Location = new System.Drawing.Point(146, 3);
+            this.cbb_b.Location = new System.Drawing.Point(147, 3);
             this.cbb_b.Name = "cbb_b";
-            this.cbb_b.Size = new System.Drawing.Size(137, 25);
+            this.cbb_b.Size = new System.Drawing.Size(138, 25);
             this.cbb_b.TabIndex = 0;
             this.cbb_b.TextUpdate += new System.EventHandler(this.cbb_a_TextUpdate);
             // 
@@ -97,7 +97,7 @@
             "4:1",
             "4:2",
             "4:3"});
-            this.cbb_score.Location = new System.Drawing.Point(289, 3);
+            this.cbb_score.Location = new System.Drawing.Point(291, 3);
             this.cbb_score.Name = "cbb_score";
             this.cbb_score.Size = new System.Drawing.Size(54, 25);
             this.cbb_score.TabIndex = 1;
@@ -106,9 +106,9 @@
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::积分赛算分系统.Properties.Resources.delete3;
-            this.pictureBox1.Location = new System.Drawing.Point(349, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(351, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(26, 25);
+            this.pictureBox1.Size = new System.Drawing.Size(26, 27);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -123,8 +123,8 @@
             this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UCScore";
-            this.Padding = new System.Windows.Forms.Padding(1);
             this.Size = new System.Drawing.Size(380, 33);
+            this.Load += new System.EventHandler(this.UCScore_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

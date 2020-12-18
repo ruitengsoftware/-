@@ -22,8 +22,6 @@ namespace 积分赛算分系统
         {
             InitializeComponent();
             list_name = l;
-            cbb_a.Items.AddRange(list_name.ToArray());
-            cbb_b.Items.AddRange(list_name.ToArray());
 
         }
 
@@ -48,6 +46,13 @@ namespace 积分赛算分系统
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void UCScore_Load(object sender, EventArgs e)
+        {
+            cbb_a.Items.AddRange(list_name.ToArray());
+            cbb_b.Items.AddRange(list_name.ToArray());
+
         }
     }
 }
